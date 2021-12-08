@@ -12,6 +12,15 @@
 - Muhammad Arkan Fauzan - 2006597380
 - Al Ghifari Enerza Sentanu - 2006596825
 
-## Link Download APK: https://drive.google.com/file/d/1luM7ld1A4No4IuZ8SqOPSara6Bsllscj/view?usp=sharing
+## Link Download APK: 
+https://drive.google.com/file/d/1luM7ld1A4No4IuZ8SqOPSara6Bsllscj/view?usp=sharing
 
 ## Cerita Modul dan Implementasi Web Service
+Modul yang akan diimplementasikan:
+1. Authorization & Authentication 
+2. Home & Info seputar Covid-19 (tentang Covid-19, cara melindungi diri dari Covid-19, cara Covid menular, dll)
+3. Data kasus Covid-19 
+4. Info terkait vaksin
+5. Indeks kewaspadaan tiap daerah
+6. Rujukan rumah sakit
+7. Forum Discussion
