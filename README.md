@@ -22,5 +22,5 @@ Modul yang akan diimplementasikan:
 3. Data kasus Covid-19 
 4. Info terkait vaksin (Sama seperti fungsinya pada situs [Covid App](http://covid-information-app.herokuapp.com/), modul ini akan menampilkan banyaknya jumlah orang yang sudah melaksanakan vaksinasi baik vaksinasi pertama maupun kedua berdasarkan kategorinya(data yang terlibat bukan merupakan data yang sebenarnya). Modul ini juga akan melakukan _request_ kedalam _database_ Django sehingga nantinya data yang ditampilkan dapat seragam dengan data yang berada pada situs [Covid App](http://covid-information-app.herokuapp.com/).)
 5. Indeks kewaspadaan tiap daerah
-6. Rujukan rumah sakit
+6. Rujukan rumah sakit (Modul berfungsi sama seperti pada situs [Covid App](http://covid-information-app.herokuapp.com/), menampilkan daftar rumah sakit rujukan yang merupakan objek model pada database Django. Jika pengguna merupakan admin, bisa menambah rumah sakit rujukan.)
 7. Forum Discussion
