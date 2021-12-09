@@ -17,7 +17,7 @@ https://drive.google.com/file/d/1luM7ld1A4No4IuZ8SqOPSara6Bsllscj/view?usp=shari
 
 ## Cerita Modul dan Implementasi Web Service
 Modul yang akan diimplementasikan:
-1. Authorization & Authentication (Modul ini akan memberikan akun kepada pengguna yang mendaftar pada situs [Covid App](http://covid-information-app.herokuapp.com/) dan data yang disimpan akan terhubung ke _database_ yang ada pada Django. Semua yang terintegrasikan di situs akan diimplementasikan ke dalam bentuk _mobile app_ seperti _profile page, login page,_ dan _registration page_.)
+1. Authorization & Authentication (Modul ini akan memberikan akun kepada pengguna yang mendaftar pada situs [Covid App](http://covid-information-app.herokuapp.com/) dan data yang disimpan akan terhubung ke _database_ yang ada pada Django. Semua yang telah diintegrasikan di situs akan diimplementasikan ke dalam bentuk _mobile app_ seperti _profile page, login page,_ dan _registration page_.)
 2. Home & Info seputar Covid-19 
 3. Data kasus Covid-19 
 4. Info terkait vaksin
