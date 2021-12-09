@@ -29,3 +29,10 @@ Modul ini akan menampilkan indeks kewaspadaan dengan beberapa kategori, seperti 
 6. **Rujukan rumah sakit** <br>
 Modul berfungsi sama seperti pada situs [Covid App](http://covid-information-app.herokuapp.com/), menampilkan daftar rumah sakit rujukan yang merupakan objek model pada database Django. Jika pengguna merupakan admin, bisa menambah rumah sakit rujukan.
 7. **Forum Discussion**
+
+Manfaat yang ingin kami berikan untuk masyarakat dari aplikasi ini adalah memberikan informasi yang akurat terkait Covid-19, sehingga diharapkan dapat membantu dalam mengedukasi dan meningkatkan kewaspadaan masyarakat terhadap Covid-19 serta menekan peningkatan kasus Covid-19 di Indonesia.
+
+Persona
+- Guest Mode: dapat melihat informasi yang ada, tetapi tidak dapat bergabung ataupun mem-posting pada forum discussion.
+- User: dapat melihat seluruh informasi yang ada pada website, serta dapat bergabung dalam forum discussion dan dapat mem-posting dalam forum discussion, namun tidak dapat menghapus postingan pada forum discussion.
+- Administrator: dapat menghapus postingan yang sudah di-post pada forum discussion.
