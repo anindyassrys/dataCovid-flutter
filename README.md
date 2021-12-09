@@ -20,7 +20,8 @@ Kami akan membuat suatu aplikasi yang berisi informasi yang valid seputar Covid-
 Modul yang akan diimplementasikan pada aplikasi ini akan merujuk pada modul-modul pada situs [Covid App](http://covid-information-app.herokuapp.com/) yang telah kami buat sebelumnya, yaitu sebagai berikut:
 1. **Authorization & Authentication** <br>
 Modul ini akan memberikan akun kepada pengguna yang mendaftar pada situs [Covid App](http://covid-information-app.herokuapp.com/) dan data yang disimpan akan terhubung ke _database_ yang ada pada Django. Semua yang telah diintegrasikan di situs akan diimplementasikan ke dalam bentuk _mobile app_ seperti _profile page, login page,_ dan _registration page_.
-2. **Home & Info seputar Covid-19** 
+2. **Home & Info seputar Covid-19** <br>
+Halaman utama pada aplikasi, yang juga berisi informasi seputar Covid-19 yang dapat langsung dilihat oleh pengguna.
 3. **Data kasus Covid-19** <br>
 Berisi update data jumlah kasus Covid-19 (positif, sembuh, meninggal), baik secara nasional, maupun pada berbagai daerah di Indonesia.
 4. **Info terkait vaksin** <br>
