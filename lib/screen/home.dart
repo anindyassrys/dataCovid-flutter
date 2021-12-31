@@ -247,63 +247,84 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: <Widget>[
                     Text('FAQ', style: TextStyle(fontWeight: FontWeight.bold), textAlign: TextAlign.left,),
                     ExpansionTile(
-                      title: Text('Pertanyaan Pertama'),
+                      title: Text('Apa itu Virus Korona?'),
                       children: [
-                        Text('isi dari pertanyaan pertama.', textAlign: TextAlign.justify,),
+                        Text('Virus korona adalah sebutan untuk jenis virus yang dapat menyebabkan penyakit pada hewan dan manusia. Disebut korona karena bentuknya yang seperti mahkota (korona ~ crown = mahkota dalam bahasa Latin).Beberapa contoh penyakit pada manusia yang disebabkan oleh virus korona antara lain MERS (Sindrom Pernafasan Timur Tengah) dan SARS (Sindrom Pernafasan Akut Parah).Virus korona terbaru yang ditemukan yang ditemukan di Wuhan, Tiongkok, pada bulan Desember 2019 diberi nama SARS Coronavirus 2 (SARS-CoV-2) dan menyebabkan penyakit Coronavirus Disease 2019 (COVID-19).', textAlign: TextAlign.justify,),
                       ],
                     ),
                     ExpansionTile(
-                      title: Text('Pertanyaan Kedua'),
+                      title: Text('Apa bedanya dengan COVID-19?'),
                       children: [
-                        Text('isi dari pertanyaan Kedua.', textAlign: TextAlign.justify,),
+                        Text('COVID-19 adalah penyakit menular yang disebabkan oleh virus korona SARS-CoV-2. Dengan kata lain, SARS-CoV-2 adalah nama virusnya, sementara COVID-19 adalah nama penyakitnya. Ini seperti HIV yang adalah nama virus dari penyakit AIDS.', textAlign: TextAlign.justify,),
                       ],
                     ),
                     ExpansionTile(
-                      title: Text('Pertanyaan Ketiga'),
+                      title: Text('Bagaimana COVID-19 menular?'),
                       children: [
-                        Text('isi dari pertanyaan Ketiga.', textAlign: TextAlign.justify,),
+                        Text('Penularan terjadi melalui droplet (butir-butir tetesan cairan) dari hidung atau mulut yang menyebar saat pembawa virus COVID-19 batuk, bersin atau meler. Tetesan cairan tersebut akan menempel pada benda atau permukaan di sekitarnya. Dan kemudian masuk ke mulut, hidung atau mata. Atau menyentuh permukaan bekas terkena butir cairannya dengan tangan lalu tangan mengusap mulut, hidung atau mata. Inilah alasan pentingnya sering-sering cuci tangan dan jangan menyentuh muka dengan tangan.Orang sehat dapat tertular saat tangan mereka menyentuh permukaan yang terkena tetesan tersebut dan kemudian tanpa sadar menyentuh mata, mulut, ataupun hidung (selaput lendir). Virus juga bisa masuk saat orang sehat secara tidak sengaja menghirup tetesan cairan saat si pembawa virus batuk atau bersin.', textAlign: TextAlign.justify,),
                       ],
                     ),
                     ExpansionTile(
-                      title: Text('Pertanyaan Keempat'),
+                      title: Text('Jika seseorang terinfeksi virus ini, berapa lama sampai muncul gejala?'),
                       children: [
-                        Text('isi dari pertanyaan Keempat.', textAlign: TextAlign.justify,),
+                        Text('Masa inkubasi (dari masuknya virus ke dalam tubuh sampai munculnya gejala awal) adalah 1 – 14 hari, dengan rata-rata timbulnya gejala selama 5 hari.', textAlign: TextAlign.justify,),
                       ],
                     ),
                     ExpansionTile(
-                      title: Text('Pertanyaan Kelima'),
+                      title: Text('Seberapa banyak pasien yang akan mengalami gejala serius?'),
                       children: [
-                        Text('isi dari pertanyaan Kelima.', textAlign: TextAlign.justify,),
+                        Text('Dari data yang tersedia saat ini, kita belum bisa menyimpulkan secara persis seberapa parah wabah COVID-19 ini. Tingkat keparahan dan mortalitas suatu wabah juga akan sangat tergantung pada kapasitas sistem kesehatan publik setempat dalam menangani kasus yang ada. Namun, temuan awal mengindikasikan bahwa tingkat keparahan COVID-19 lebih rendah dibandingkan SARS. Berdasarkan data dari 44 ribu pasien yang dirilis oleh Centre of Disease Control di Tiongkok, proporsi pasien dengan gejala ringan/serius/kritis dan tingkat kematiannya adalah sebagai berikut:', textAlign: TextAlign.justify,),
+                        Text('- Gejala ringan seperti flu biasa: 81% (tingkat kematian: 0).'),
+                        Text('- Gejala lebih serius seperti sesak napas dan pneumonia (radang paru-paru): 14% (tingkat kematian: 0).'),
+                        Text('- Perlu masuk ICU dengan kondisi kritis karena gagal pernapasan, syok septik, dan gagal multi-organ: 5% (tingkat kematian: 50%).'),
                       ],
                     ),
                     ExpansionTile(
-                      title: Text('Pertanyaan Keenam'),
+                      title: Text('Bagaimanakah tingkat kematian akibat penyakit ini jika dilihat dari kelompok usia?'),
                       children: [
-                        Text('isi dari pertanyaan Keenam.', textAlign: TextAlign.justify,),
+                        Text('Berdasarkan data yang sama, tingkat kematian akibat penyakit ini sesuai golongan umur adalah sebagai berikut:', textAlign: TextAlign.justify,),
+                        Text('- 0-9 tahun : 0%'),
+                        Text('- 10-19 : 0,2%'),
+                        Text('- 20-29 : 0,2%'),
+                        Text('- 30-39 : 0,2%'),
+                        Text('- 40-49 : 0,4%'),
+                        Text('- 50-59 : 1,3%'),
+                        Text('- 60-69 : 3,6%'),
+                        Text('- 70-79 : 8.0%'),
+                        Text('- >80 : 14,8%'),
                       ],
                     ),
                     ExpansionTile(
-                      title: Text('Pertanyaan Ketujuh'),
+                      title: Text('Bagaimanakah tingkat kematian akibat penyakit ini jika dilihat dari jenis kelamin?'),
                       children: [
-                        Text('isi dari pertanyaan Ketujuh.', textAlign: TextAlign.justify,),
+                        Text('Berdasarkan data yang sama, tingkat kematian penderita laki-laki lebih tinggi dari penderita perempuan, yaitu laki-laki sebanyak 2,8%, sementara perempuan 1,7%.', textAlign: TextAlign.justify,),
                       ],
                     ),
                     ExpansionTile(
-                      title: Text('Pertanyaan Kedelapan'),
+                      title: Text('Bagaimanakah tingkat kematian akibat penyakit ini jika dilihat dari ada/tidak adanya penyakit penyerta/komorbiditas lainnya?'),
                       children: [
-                        Text('isi dari pertanyaan Kedelapan.', textAlign: TextAlign.justify,),
+                        Text('- Kondisi tanpa penyakit penyerta apapun: 0,9%'),
+                        Text('- Pasien dengan penyakit kardiovaskular: 10,5%'),
+                        Text('- Diabetes: 7,3%'),
+                        Text('- Saluran pernapasan kronis: 6,3%'),
+                        Text('- Tekanan darah tinggi: 6%'),
+                        Text('- Kanker: 5,6%'),
                       ],
                     ),
                     ExpansionTile(
-                      title: Text('Pertanyaan Kesembilan'),
+                      title: Text('Apa yang harus saya sampaikan kepada tenaga medis jika saya batuk pilek demam dan sulit bernafas?'),
                       children: [
-                        Text('isi dari pertanyaan Kesembilan.', textAlign: TextAlign.justify,),
+                        Text('1. Riwayat perjalanan (jika ada, ke Tiongkok atau negara-negara yang sudah terjangkit COVID-19, seperti Singapura, Jepang, Korea Selatan, dan Italia).'),
+                        Text('2. Kapan gejala mulai timbul.'),
+                        Text('3. Adakah kontak selama 14 hari terakhir dengan seseorang yang memiliki gejala pernapasan dan baru datang dari salah satu daerah yang ditemukan memiliki kasus COVID-19.'),
+                        Text('Dokter Anda yang akan menentukan langkah selanjutnya.', textAlign: TextAlign.justify,),
                       ],
                     ),
                     ExpansionTile(
-                      title: Text('Pertanyaan Kesepuluh'),
+                      title: Text('Bagaimana saya dapat dinyatakan positif atau negatif Covid-19?'),
                       children: [
-                        Text('isi dari pertanyaan Kesepuluh.', textAlign: TextAlign.justify,),
+                        Text('1. Sampel spesimen akan diambil menggunakan alat berbentuk batang cotton bud namun lebih panjang, melalui hidung.'),
+                        Text('2. Sampel tersebut akan dikirim ke laboratorium untuk dites PCR (Reaksi Berantai Polimerase). Pemerintah sudah menunjuk laboratorium di 10 kota yaitu Batam, Medan, Palembang, Makassar, Manado, Ambon, Jakarta, Bandung, Yogyakarta, Surabaya, dan Banjarmasin untuk melakukan tes ini.'),
                       ],
                     ),
                   ],
