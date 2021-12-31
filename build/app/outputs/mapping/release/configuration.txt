@@ -1,4 +1,4 @@
-# The proguard configuration file for the following section is C:\Users\ASUS\Documents\Sem 3\PBP\tk\covid_info_app\build\app\intermediates\proguard-files\proguard-android.txt-4.1.0
+# The proguard configuration file for the following section is C:\Users\ASUS\Documents\Sem 3\PBP\tk\covid_info_app\pbp-flutter\build\app\intermediates\proguard-files\proguard-android.txt-4.1.0
 # This is a configuration file for ProGuard.
 # http://proguard.sourceforge.net/index.html#manual/usage.html
 #
@@ -110,7 +110,7 @@
 # These classes are duplicated between android.jar and core-lambda-stubs.jar.
 -dontnote java.lang.invoke.**
 
-# End of content from C:\Users\ASUS\Documents\Sem 3\PBP\tk\covid_info_app\build\app\intermediates\proguard-files\proguard-android.txt-4.1.0
+# End of content from C:\Users\ASUS\Documents\Sem 3\PBP\tk\covid_info_app\pbp-flutter\build\app\intermediates\proguard-files\proguard-android.txt-4.1.0
 # The proguard configuration file for the following section is C:\Users\ASUS\Documents\flutter_windows_2.5.3-stable\flutter\packages\flutter_tools\gradle\flutter_proguard_rules.pro
 # Build the ephemeral app in a module project.
 # Prevents: Warning: library class <plugin-package> depends on program class io.flutter.plugin.**
@@ -121,11 +121,42 @@
 -dontwarn android.**
 
 # End of content from C:\Users\ASUS\Documents\flutter_windows_2.5.3-stable\flutter\packages\flutter_tools\gradle\flutter_proguard_rules.pro
-# The proguard configuration file for the following section is C:\Users\ASUS\Documents\Sem 3\PBP\tk\covid_info_app\build\app\intermediates\aapt_proguard_file\release\aapt_rules.txt
+# The proguard configuration file for the following section is C:\Users\ASUS\Documents\Sem 3\PBP\tk\covid_info_app\pbp-flutter\build\app\intermediates\aapt_proguard_file\release\aapt_rules.txt
 -keep class androidx.core.app.CoreComponentFactory { <init>(); }
 -keep class com.example.covid_info_app.MainActivity { <init>(); }
+-keep class io.flutter.plugins.urllauncher.WebViewActivity { <init>(); }
 
-# End of content from C:\Users\ASUS\Documents\Sem 3\PBP\tk\covid_info_app\build\app\intermediates\aapt_proguard_file\release\aapt_rules.txt
+# End of content from C:\Users\ASUS\Documents\Sem 3\PBP\tk\covid_info_app\pbp-flutter\build\app\intermediates\aapt_proguard_file\release\aapt_rules.txt
+# The proguard configuration file for the following section is C:\Users\ASUS\.gradle\caches\transforms-2\files-2.1\cbbb6921b2521959953b0c781fe5c304\webkit-1.0.0\proguard.txt
+# Copyright 2018 The Chromium Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+# We need to avoid obfuscating the support library boundary interface because
+# this API is shared with the Android Support Library.
+# Note that we only 'keep' the package org.chromium.support_lib_boundary itself,
+# any sub-packages of that package can still be obfuscated.
+-keep public class org.chromium.support_lib_boundary.* { public *; }
+
+# Copyright (C) 2018 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Prevent WebViewClientCompat from being renamed, since chromium depends on this name.
+-keepnames public class androidx.webkit.WebViewClientCompat
+
+
+# End of content from C:\Users\ASUS\.gradle\caches\transforms-2\files-2.1\cbbb6921b2521959953b0c781fe5c304\webkit-1.0.0\proguard.txt
 # The proguard configuration file for the following section is C:\Users\ASUS\.gradle\caches\transforms-2\files-2.1\2e94107f30f39be366a17347c2bf100b\core-1.1.0\proguard.txt
 # aapt2 is not (yet) keeping FQCNs defined in the appComponentFactory <application> attribute
 -keep class androidx.core.app.CoreComponentFactory
