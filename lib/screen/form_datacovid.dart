@@ -5,13 +5,12 @@ import 'package:http/http.dart' as http;
 void main() {
   runApp(MaterialApp(
     title: "Form Covid-19",
-    home: BelajarForm(
-    ),
+    home: BelajarForm(),
   ));
 }
 
-
 class BelajarForm extends StatefulWidget {
+  static const routeName = '/form';
   @override
   _BelajarFormState createState() => _BelajarFormState();
 }
@@ -19,14 +18,14 @@ class BelajarForm extends StatefulWidget {
 class _BelajarFormState extends State<BelajarForm> {
   final _formKey = GlobalKey<FormState>();
 
-String input = "";
-String inputDaerah = "";
+  String input = "";
+  String inputDaerah = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.brown.shade100,
       //drawer: Drawer(
-        //child: Text('Dummy'),
+      //child: Text('Dummy'),
       //),
       appBar: AppBar(
         backgroundColor: Colors.brown.shade300,
@@ -40,21 +39,21 @@ String inputDaerah = "";
             children: [
               const SizedBox(height: 8),
               Text(
-            'Form Data Covid',
-            style: TextStyle(
-              fontSize: 32,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Sora',
-            ),
-          ),
-          const SizedBox(height: 13),
-          Text(
-            'Silakan isi form di bawah ini untuk menambahkan data daerah kasus Covid-19',
-            style: TextStyle(
-              fontFamily: 'Sora',
-            ),
-          ),
-          const SizedBox(height: 13),
+                'Form Data Covid',
+                style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Sora',
+                ),
+              ),
+              const SizedBox(height: 13),
+              Text(
+                'Silakan isi form di bawah ini untuk menambahkan data daerah kasus Covid-19',
+                style: TextStyle(
+                  fontFamily: 'Sora',
+                ),
+              ),
+              const SizedBox(height: 13),
               // TextField(),
               TextFormField(
                 decoration: new InputDecoration(
@@ -64,7 +63,7 @@ String inputDaerah = "";
                       borderRadius: new BorderRadius.circular(5.0)),
                 ),
                 validator: (value) {
-                  if (value!= null && value.isEmpty) {
+                  if (value != null && value.isEmpty) {
                     return 'Daerah tidak boleh kosong!';
                   }
                   inputDaerah = value!;
@@ -80,7 +79,7 @@ String inputDaerah = "";
                       borderRadius: new BorderRadius.circular(5.0)),
                 ),
                 validator: (value) {
-                  if (value!= null && value.isEmpty) {
+                  if (value != null && value.isEmpty) {
                     return 'Kasus positif tidak boleh kosong!';
                   }
                   input = value!;
@@ -95,27 +94,28 @@ String inputDaerah = "";
                 ),
                 color: Colors.brown.shade300,
                 onPressed: () async {
-                  await http.post (
-                    Uri.parse('http://covid-information-app.herokuapp.com/data-covid/post_content'),
-                    headers: <String, String> {"Content-Type": "application/json;charset=UTF-8"},
-                    body: jsonEncode(<String, String> {
-                      'daerah': inputDaerah,
-                      'positif': input
-                    }
-                    )
-                  );
+                  await http
+                      .post(
+                          Uri.parse(
+                              'http://covid-information-app.herokuapp.com/data-covid/post_content'),
+                          headers: <String, String>{
+                            "Content-Type": "application/json;charset=UTF-8"
+                          },
+                          body: jsonEncode(<String, String>{
+                            'daerah': inputDaerah,
+                            'positif': input
+                          }));
                   showDialog(
-                    context: context, 
-                    builder: (BuildContext context) => AlertDialog(
-                      title: const Text('Data berhasil ditambahkan!', textAlign: TextAlign.center),
-                      actions: <Widget>[
-                        TextButton(
-                          onPressed: () => Navigator.pop(context, 'OK'),
-                          child: const Text('OK')
-                          ),
-                      ]
-                    )
-                    );
+                      context: context,
+                      builder: (BuildContext context) => AlertDialog(
+                              title: const Text('Data berhasil ditambahkan!',
+                                  textAlign: TextAlign.center),
+                              actions: <Widget>[
+                                TextButton(
+                                    onPressed: () =>
+                                        Navigator.pop(context, 'OK'),
+                                    child: const Text('OK')),
+                              ]));
                 },
               ),
             ],

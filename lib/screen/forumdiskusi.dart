@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
 
 class MyCustomForm extends StatefulWidget {
   const MyCustomForm({Key? key}) : super(key: key);
+  static const routeName = '/forum';
 
   @override
   MyCustomFormState createState() {

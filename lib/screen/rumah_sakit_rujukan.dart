@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 
 class RujukanPage extends StatefulWidget {
   const RujukanPage({Key? key}) : super(key: key);
+  static const routeName = '/rumah-sakit-rujukan';
 
   @override
   State<RujukanPage> createState() => _Rujukan();

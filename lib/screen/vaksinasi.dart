@@ -5,6 +5,7 @@ import 'kategori_model.dart';
 
 class Vaksinasi extends StatelessWidget {
   const Vaksinasi({Key? key}) : super(key: key);
+  static const routeName = '/vaksinasi';
 
   @override
   Widget build(BuildContext context) {

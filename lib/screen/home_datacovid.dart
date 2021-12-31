@@ -1,4 +1,3 @@
-import 'dart:html';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'dart:convert';
@@ -6,36 +5,34 @@ import 'form_datacovid.dart';
 
 /// This is the stateless widget that the main application instantiates.
 class Halaman extends StatefulWidget {
+  static const routeName = '/datacovid';
   @override
   State<Halaman> createState() => _HalamanState();
 }
 
-
 class _HalamanState extends State<Halaman> {
-Future<List<Data>> getData() async {
-
-    var data = await http.get(Uri.parse('http://covid-information-app.herokuapp.com/data-covid/get_content'));
+  Future<List<Data>> getData() async {
+    var data = await http.get(Uri.parse(
+        'http://covid-information-app.herokuapp.com/data-covid/get_content'));
 
     var jsonData = json.decode(data.body);
 
     List<Data> res = [];
 
-    for(var i in jsonData){
-
+    for (var i in jsonData) {
       Data datacov = Data(i["daerah"], i["positif"]);
 
       res.add(datacov);
-      
     }
-    
+
     return List.from(res);
-}
+  }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       //drawer: Drawer(
-        //child: Text('Yo!'),
+      //child: Text('Yo!'),
       //),
       appBar: AppBar(
         backgroundColor: Colors.brown.shade50,
@@ -59,46 +56,44 @@ Future<List<Data>> getData() async {
           cardTiga(),
           const SizedBox(height: 28),
           Text(
-              'Data Covid-19 Per Daerah'
-              ,
+            'Data Covid-19 Per Daerah',
             style: TextStyle(
               fontSize: 32,
               fontWeight: FontWeight.bold,
             ),
+          ),
+          Text('Data Covid-19 bersifat dummy dan dapat berubah sewaktu-waktu'),
+          FutureBuilder(
+            future: getData(),
+            builder: (BuildContext context, AsyncSnapshot snapshot) {
+              if (!snapshot.hasData) {
+                return const Center(child: CircularProgressIndicator());
+              } else {
+                return ListView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  itemCount: 1,
+                  itemBuilder: (BuildContext context, int index) {
+                    return cardEmpat(snapshot.data[index].daerah,
+                        snapshot.data[index].positif);
+                  },
+                );
+              }
+            },
+          ),
+          const SizedBox(height: 13),
+          ElevatedButton(
+            child: Text(
+              "Tambah",
+              style: TextStyle(color: Colors.white),
             ),
-              Text(
-              'Data Covid-19 bersifat dummy dan dapat berubah sewaktu-waktu'),
-              FutureBuilder(
-                future: getData(),
-                builder: (BuildContext context, AsyncSnapshot snapshot) {
-                  if (!snapshot.hasData) {
-                    return const Center(child: CircularProgressIndicator());
-                  }
-                  else {
-                    return ListView.builder(
-                      physics: const NeverScrollableScrollPhysics(),
-                      scrollDirection: Axis.vertical,
-                      shrinkWrap: true,
-                      itemCount  : 1,
-                      itemBuilder: (BuildContext context, int index) {
-                        return cardEmpat(snapshot.data[index].daerah, snapshot.data[index].positif);
-                      },
-                    );
-                  }
-                },
-              ),
-              const SizedBox(height: 13),
-              ElevatedButton(
-                child: Text(
-                  "Tambah",
-                  style: TextStyle(color: Colors.white),
-                ),
-                //color: Colors.brown.shade300,
-                onPressed: () {
-                  Navigator.push(context, 
+            //color: Colors.brown.shade300,
+            onPressed: () {
+              Navigator.push(context,
                   MaterialPageRoute(builder: (context) => BelajarForm()));
-                },
-              ),
+            },
+          ),
         ],
       ),
     );
@@ -158,29 +153,25 @@ Future<List<Data>> getData() async {
         ),
       );
 
-       Card cardEmpat(String daerah, String positif) {
-         return Card(
-        child: Column(
-          children: [
-            Text(
-              daerah
-            ),
-            Text(
-              positif
-            ),
-          ],
-        ),
-        );
-       }
+  Card cardEmpat(String daerah, String positif) {
+    return Card(
+      child: Column(
+        children: [
+          Text(daerah),
+          Text(positif),
+        ],
+      ),
+    );
+  }
 }
 
-class Data{
-  final String daerah ;
-  final String positif ;
+class Data {
+  final String daerah;
+  final String positif;
 
   Data(this.daerah, this.positif);
 
   Data.fromJson(Map<String, dynamic> json)
-    : daerah = json['daerah'],
-      positif = json['positif'];
+      : daerah = json['daerah'],
+        positif = json['positif'];
 }

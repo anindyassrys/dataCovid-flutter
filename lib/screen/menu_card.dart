@@ -1,9 +1,15 @@
+import 'package:covid_info_app/screen/kewaspadaan.dart';
+import 'package:covid_info_app/screen/vaksinasi.dart';
 import 'package:flutter/material.dart';
 
 import 'package:covid_info_app/screen/rumah_sakit_rujukan.dart';
 
+import 'forumdiskusi.dart';
+import 'home_datacovid.dart';
+
 class MenuCard extends StatefulWidget {
   const MenuCard({Key? key}) : super(key: key);
+  static const routeName = '/menu';
 
   @override
   State<MenuCard> createState() => _MenuCardState();
@@ -22,30 +28,25 @@ class _MenuCardState extends State<MenuCard> {
               return _smallCards(context);
             }
           })),
-      floatingActionButton: FloatingActionButton(
-          elevation: 18,
-          child: Icon(Icons.arrow_left),
-          onPressed: () => {Navigator.pop(context)}),
     );
   }
 }
 
 Widget _smallCards(BuildContext context) {
   return Center(
-    child: Column(
-      children: _children(context),
+    child: SingleChildScrollView(
+      child: Column(
+        children: _children(context),
+      ),
     ),
   );
 }
 
 Widget _bigCards(BuildContext context) {
   List<Widget> children = _children(context);
-  Widget home = children[0];
-  children.remove(home);
   return Center(
       child: Column(
     children: [
-      home,
       Container(
           constraints: BoxConstraints(maxWidth: 900, minWidth: 900),
           child: Wrap(
@@ -58,21 +59,66 @@ Widget _bigCards(BuildContext context) {
 
 List<Widget> _children(BuildContext context) {
   List<Widget> children;
+  double width = 500;
+  if (MediaQuery.of(context).size.width < 500) {
+    width = MediaQuery.of(context).size.width * 0.9;
+  }
   children = [
     SizedBox(
-        width: 400,
+        width: width,
         child: Card(
           child: InkWell(
-            child: Padding(
+            child: const Padding(
               padding: EdgeInsets.all(16),
-              child: RichText(
-                  textAlign: TextAlign.center,
-                  text: const TextSpan(children: [
-                    WidgetSpan(
-                      child: Icon(Icons.home, size: 36),
-                    ),
-                    TextSpan(text: 'Home', style: TextStyle(fontSize: 32)),
-                  ])),
+              child: Text('Data Covid-19',
+                  style: TextStyle(fontSize: 24, color: Colors.black)),
+            ),
+            onTap: () => {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Halaman()))
+            },
+          ),
+        )),
+    SizedBox(
+        width: width,
+        child: Card(
+          child: InkWell(
+            child: const Padding(
+              padding: EdgeInsets.all(16),
+              child: Text('Vaksinasi',
+                  style: TextStyle(fontSize: 24, color: Colors.black)),
+            ),
+            onTap: () => {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Vaksinasi()))
+            },
+          ),
+        )),
+    SizedBox(
+        width: width,
+        child: Card(
+          child: InkWell(
+            child: const Padding(
+              padding: EdgeInsets.all(16),
+              child: Text('Peta Risiko',
+                  style: TextStyle(fontSize: 24, color: Colors.black)),
+            ),
+            onTap: () => {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const IndeksKewaspadaan()))
+            },
+          ),
+        )),
+    SizedBox(
+        width: width,
+        child: Card(
+          child: InkWell(
+            child: const Padding(
+              padding: EdgeInsets.all(16),
+              child: Text('Rumah Sakit Rujukan',
+                  style: TextStyle(fontSize: 24, color: Colors.black)),
             ),
             onTap: () => {
               Navigator.push(context,
@@ -81,128 +127,17 @@ List<Widget> _children(BuildContext context) {
           ),
         )),
     SizedBox(
-        width: 400,
+        width: width,
         child: Card(
           child: InkWell(
-            child: Padding(
+            child: const Padding(
               padding: EdgeInsets.all(16),
-              child: RichText(
-                  textAlign: TextAlign.center,
-                  text: const TextSpan(children: [
-                    WidgetSpan(
-                      child: Icon(Icons.home, size: 36),
-                    ),
-                    TextSpan(text: 'Home', style: TextStyle(fontSize: 32)),
-                  ])),
+              child: Text('Diskusi',
+                  style: TextStyle(fontSize: 24, color: Colors.black)),
             ),
             onTap: () => {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const RujukanPage()))
-            },
-          ),
-        )),
-    SizedBox(
-        width: 400,
-        child: Card(
-          child: InkWell(
-            child: Padding(
-              padding: EdgeInsets.all(16),
-              child: RichText(
-                  textAlign: TextAlign.center,
-                  text: const TextSpan(children: [
-                    WidgetSpan(
-                      child: Icon(Icons.home, size: 36),
-                    ),
-                    TextSpan(text: 'Home', style: TextStyle(fontSize: 32)),
-                  ])),
-            ),
-            onTap: () => {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const RujukanPage()))
-            },
-          ),
-        )),
-    SizedBox(
-        width: 400,
-        child: Card(
-          child: InkWell(
-            child: Padding(
-              padding: EdgeInsets.all(16),
-              child: RichText(
-                  textAlign: TextAlign.center,
-                  text: const TextSpan(children: [
-                    WidgetSpan(
-                      child: Icon(Icons.home, size: 36),
-                    ),
-                    TextSpan(text: 'Home', style: TextStyle(fontSize: 32)),
-                  ])),
-            ),
-            onTap: () => {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const RujukanPage()))
-            },
-          ),
-        )),
-    SizedBox(
-        width: 400,
-        child: Card(
-          child: InkWell(
-            child: Padding(
-              padding: EdgeInsets.all(16),
-              child: RichText(
-                  textAlign: TextAlign.center,
-                  text: const TextSpan(children: [
-                    WidgetSpan(
-                      child: Icon(Icons.home, size: 36),
-                    ),
-                    TextSpan(text: 'Home', style: TextStyle(fontSize: 32)),
-                  ])),
-            ),
-            onTap: () => {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const RujukanPage()))
-            },
-          ),
-        )),
-    SizedBox(
-        width: 400,
-        child: Card(
-          child: InkWell(
-            child: Padding(
-              padding: EdgeInsets.all(16),
-              child: RichText(
-                  textAlign: TextAlign.center,
-                  text: const TextSpan(children: [
-                    WidgetSpan(
-                      child: Icon(Icons.home, size: 36),
-                    ),
-                    TextSpan(text: 'Home', style: TextStyle(fontSize: 32)),
-                  ])),
-            ),
-            onTap: () => {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const RujukanPage()))
-            },
-          ),
-        )),
-    SizedBox(
-        width: 400,
-        child: Card(
-          child: InkWell(
-            child: Padding(
-              padding: EdgeInsets.all(16),
-              child: RichText(
-                  textAlign: TextAlign.center,
-                  text: const TextSpan(children: [
-                    WidgetSpan(
-                      child: Icon(Icons.home, size: 36),
-                    ),
-                    TextSpan(text: 'Home', style: TextStyle(fontSize: 32)),
-                  ])),
-            ),
-            onTap: () => {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const RujukanPage()))
+                  MaterialPageRoute(builder: (context) => const MyCustomForm()))
             },
           ),
         )),
