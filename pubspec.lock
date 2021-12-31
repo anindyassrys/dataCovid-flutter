@@ -115,15 +115,12 @@ packages:
     source: hosted
     version: "4.0.0"
   js:
-    dependency: transitive
-    description:
       name: js
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.3"
   lints:
     dependency: transitive
-    description:
       name: lints
       url: "https://pub.dartlang.org"
     source: hosted
@@ -198,8 +195,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.4"
-<<<<<<< HEAD
-=======
   provider:
     dependency: "direct main"
     description:
@@ -207,7 +202,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.0.2"
->>>>>>> 5bde4883fad6bdc9c883533cddca811d399b6dae
   shared_preferences:
     dependency: "direct main"
     description:
