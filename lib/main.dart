@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 import 'package:covid_info_app/screen/forumdiskusi.dart';
->>>>>>> d4cf5a49a9495c0dc72bd0596175ce0e331ec77c
 import 'package:flutter/material.dart';
 // import 'package:provider.dart';
 
@@ -22,8 +19,6 @@ class myApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
-=======
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -47,7 +42,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return const MenuCard();
->>>>>>> d4cf5a49a9495c0dc72bd0596175ce0e331ec77c
     return Provider(
         create: (_) {
           CookieRequest request = CookieRequest();
