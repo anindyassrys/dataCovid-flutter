@@ -1,11 +1,14 @@
 import 'package:covid_info_app/screen/forumdiskusi.dart';
 import 'package:flutter/material.dart';
+// import 'package:provider.dart';
+
+import 'package:covid_info_app/screen/menu_card.dart';
+import 'package:covid_info_app/screen/rumah_sakit_rujukan.dart';
 import 'package:provider/provider.dart';
-
 import 'package:covid_info_app/screen/auth.dart';
-
 import 'package:covid_info_app/screen/login_page.dart';
 import 'package:covid_info_app/screen/register_page.dart';
+import 'screen/home_datacovid.dart';
 
 void main() {
   runApp(myApp());
@@ -16,6 +19,29 @@ class myApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return const MenuCard();
     return Provider(
         create: (_) {
           CookieRequest request = CookieRequest();
