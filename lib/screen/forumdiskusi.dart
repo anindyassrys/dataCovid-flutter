@@ -5,7 +5,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  static const routeName = '/diskusi';
   const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
@@ -69,7 +68,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                             fontSize: 36,
                           ),
                         ),
-                        Text('Hai abduh,',
+                        Text('Hai,',
                             style: TextStyle(
                                 fontSize: 24,
                                 color: Colors.black.withOpacity(1.0))),
@@ -209,6 +208,8 @@ class MyCustomFormState extends State<MyCustomForm> {
 }
 
 class SecondRoute extends StatelessWidget {
+  String? judul;
+  String? pesan;
   final _formKey = GlobalKey<FormState>();
 
   SecondRoute({Key? key}) : super(key: key);
@@ -243,6 +244,9 @@ class SecondRoute extends StatelessWidget {
             Padding(
                 padding: const EdgeInsets.only(top: 25.0),
                 child: TextFormField(
+                  onSaved: (String? value) {
+                    judul = value;
+                  },
                   decoration: const InputDecoration(
                     labelText: "Judul",
                     focusedBorder: OutlineInputBorder(
@@ -264,6 +268,9 @@ class SecondRoute extends StatelessWidget {
             Padding(
                 padding: const EdgeInsets.only(top: 25.0),
                 child: TextFormField(
+                  onSaved: (String? value) {
+                    pesan = value;
+                  },
                   decoration: const InputDecoration(
                     labelText: "Pesan",
                     focusedBorder: OutlineInputBorder(
@@ -286,16 +293,17 @@ class SecondRoute extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 32.0),
               child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pop(context);
+                onPressed: () async {
                   // Validate returns true if the form is valid, or false otherwise.
                   if (_formKey.currentState!.validate()) {
+                    _formKey.currentState!.save();
                     // If the form is valid, display a snackbar. In the real world,
                     // you'd often call a server or save the information in a database.
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(content: Text('Processing Data')),
                     );
                   }
+                  Navigator.pop(context);
                 },
                 child: const Text('Tambah'),
               ),
