@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(MaterialApp(
@@ -18,13 +21,14 @@ class _BelajarFormState extends State<BelajarForm> {
   final _formKey = GlobalKey<FormState>();
 
 String input = "";
+String inputDaerah = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.brown.shade100,
-      drawer: Drawer(
-        child: Text('Dummy'),
-      ),
+      //drawer: Drawer(
+        //child: Text('Dummy'),
+      //),
       appBar: AppBar(
         backgroundColor: Colors.brown.shade300,
         title: Text("PBP-09"),
@@ -64,6 +68,7 @@ String input = "";
                   if (value!= null && value.isEmpty) {
                     return 'Daerah tidak boleh kosong!';
                   }
+                  inputDaerah = value!;
                   return null;
                 },
               ),
@@ -90,14 +95,28 @@ String input = "";
                   style: TextStyle(color: Colors.white),
                 ),
                 color: Colors.brown.shade300,
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                  // If the form is valid, display a snackbar. In the real world,
-                  // you'd often call a server or save the information in a database.
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text(input + " kasus positif berhasil ditambahkan")),
+                onPressed: () async {
+                  await http.post (
+                    Uri.parse('http://10.0.2.2:8000/data-covid/post_content'),
+                    headers: <String, String> {"Content-Type": "application/json;charset=UTF-8"},
+                    body: jsonEncode(<String, String> {
+                      'daerah': inputDaerah,
+                      'positif': input
+                    }
+                    )
                   );
-                }
+                  showDialog(
+                    context: context, 
+                    builder: (BuildContext context) => AlertDialog(
+                      title: const Text('Data berhasil ditambahkan!', textAlign: TextAlign.center),
+                      actions: <Widget>[
+                        TextButton(
+                          onPressed: () => Navigator.pop(context, 'OK'),
+                          child: const Text('OK')
+                          ),
+                      ]
+                    )
+                    );
                 },
               ),
             ],

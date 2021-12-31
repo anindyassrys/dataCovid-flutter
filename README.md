@@ -1,7 +1,6 @@
 # Covid Information App
 
-[![pipeline status](https://gitlab.com/dixonfrederick/pbp-flutter/badges/master/pipeline.svg)](https://gitlab.com/dixonfrederick/pbp-flutter/-/commits/master)
-[![coverage report](https://gitlab.com/dixonfrederick/pbp-flutter/badges/master/coverage.svg)](https://gitlab.com/dixonfrederick/pbp-flutter/-/commits/master)
+[![pipeline status](https://gitlab.com/dixonfrederick/pbp-flutter/badges/main/pipeline.svg)](https://gitlab.com/dixonfrederick/pbp-flutter/-/commits/main)
 
 # PBP D Kelompok 9
 - Dixon Frederick - 2006597840
