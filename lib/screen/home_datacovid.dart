@@ -14,7 +14,7 @@ class Halaman extends StatefulWidget {
 class _HalamanState extends State<Halaman> {
 Future<List<Data>> getData() async {
 
-    var data = await http.get(Uri.parse('http://10.0.2.2:8000/data-covid/get_content'));
+    var data = await http.get(Uri.parse('http://covid-information-app.herokuapp.com/data-covid/get_content'));
 
     var jsonData = json.decode(data.body);
 

@@ -96,7 +96,7 @@ String inputDaerah = "";
                 color: Colors.brown.shade300,
                 onPressed: () async {
                   await http.post (
-                    Uri.parse('http://10.0.2.2:8000/data-covid/post_content'),
+                    Uri.parse('http://covid-information-app.herokuapp.com/data-covid/post_content'),
                     headers: <String, String> {"Content-Type": "application/json;charset=UTF-8"},
                     body: jsonEncode(<String, String> {
                       'daerah': inputDaerah,
