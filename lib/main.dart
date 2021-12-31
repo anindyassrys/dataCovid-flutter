@@ -1,22 +1,14 @@
-<<<<<<< HEAD
-=======
+import 'package:covid_info_app/screen/forumdiskusi.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 // import 'package:provider.dart';
 
 import 'package:covid_info_app/screen/menu_card.dart';
 import 'package:covid_info_app/screen/rumah_sakit_rujukan.dart';
-=======
->>>>>>> 5bd509b0ffa654e6465587390ee65119a757097d
 import 'package:provider/provider.dart';
 import 'package:covid_info_app/screen/auth.dart';
 import 'package:covid_info_app/screen/login_page.dart';
 import 'package:covid_info_app/screen/register_page.dart';
-<<<<<<< HEAD
 import 'screen/home_datacovid.dart';
-=======
->>>>>>> 5bde4883fad6bdc9c883533cddca811d399b6dae
->>>>>>> 5bd509b0ffa654e6465587390ee65119a757097d
 
 void main() {
   runApp(myApp());
@@ -27,7 +19,6 @@ class myApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -51,7 +42,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return const MenuCard();
-=======
     return Provider(
         create: (_) {
           CookieRequest request = CookieRequest();
@@ -61,7 +51,10 @@ class _MyHomePageState extends State<MyHomePage> {
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           home: HomePage(),
-          routes: {"/login": (BuildContext context) => const LoginScreen()},
+          routes: {
+            "/login": (BuildContext context) => const LoginScreen(),
+            "/diskusi": (BuildContext context) => const MyCustomForm()
+          },
         ));
   }
 }
@@ -96,7 +89,8 @@ class HomePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (Buildercontext) => LoginScreen()),
+                    MaterialPageRoute(
+                        builder: (Buildercontext) => LoginScreen()),
                   );
                 },
                 color: Color(0xFF807166),
@@ -131,6 +125,5 @@ class HomePage extends StatelessWidget {
         )),
       ),
     );
->>>>>>> 5bde4883fad6bdc9c883533cddca811d399b6dae
   }
 }
