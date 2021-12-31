@@ -37,8 +37,11 @@ dependencies:
   http: ^0.13.4
   provider: ^6.0.1
   email_validator: ^2.0.1
+<<<<<<< HEAD
   url_launcher: ^6.0.17
   drop_shadow_image: ^0.9.1
+=======
+>>>>>>> d4cf5a49a9495c0dc72bd0596175ce0e331ec77c
 
 dev_dependencies:
   flutter_test:

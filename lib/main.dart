@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import 'package:covid_info_app/screen/forumdiskusi.dart';
+>>>>>>> d4cf5a49a9495c0dc72bd0596175ce0e331ec77c
 import 'package:flutter/material.dart';
 // import 'package:provider.dart';
 
@@ -18,6 +22,32 @@ class myApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
+=======
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return const MenuCard();
+>>>>>>> d4cf5a49a9495c0dc72bd0596175ce0e331ec77c
     return Provider(
         create: (_) {
           CookieRequest request = CookieRequest();
@@ -27,7 +57,10 @@ class myApp extends StatelessWidget {
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           home: HomePage(),
-          routes: {"/login": (BuildContext context) => const LoginScreen()},
+          routes: {
+            "/login": (BuildContext context) => const LoginScreen(),
+            "/diskusi": (BuildContext context) => const MyCustomForm()
+          },
         ));
   }
 }
@@ -62,7 +95,8 @@ class HomePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (Buildercontext) => LoginScreen()),
+                    MaterialPageRoute(
+                        builder: (Buildercontext) => LoginScreen()),
                   );
                 },
                 color: Color(0xFF807166),
