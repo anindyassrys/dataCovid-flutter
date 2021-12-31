@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+// import 'package:provider.dart';
+
+import 'package:covid_info_app/screen/menu_card.dart';
+import 'package:covid_info_app/screen/rumah_sakit_rujukan.dart';
 import 'package:provider/provider.dart';
-
 import 'package:covid_info_app/screen/auth.dart';
-
 import 'package:covid_info_app/screen/login_page.dart';
 import 'package:covid_info_app/screen/register_page.dart';
+import 'screen/home_datacovid.dart';
 
 void main() {
   runApp(myApp());

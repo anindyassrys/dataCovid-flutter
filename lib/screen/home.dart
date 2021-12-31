@@ -32,24 +32,6 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(237, 234, 229, 1),
-      appBar: AppBar(
-        backgroundColor: Color.fromRGBO(202, 195, 190, 1),
-        title:const Text('My First Mobile App'),
-        centerTitle: true,
-        elevation: 0,
-      leading: GestureDetector(
-      onTap: () { /* Write listener code here */ },
-      child: Icon(
-              Icons.menu,  // add custom icons also
-              ),
-      ),
-        actions: <Widget>[
-          IconButton(
-              onPressed: () {},
-              icon: Icon(IconData(63626, fontFamily: 'MaterialIcons')),
-          )
-        ],
-      ),
       body:
       SingleChildScrollView(
         child: Center(
