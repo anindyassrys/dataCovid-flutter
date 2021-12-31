@@ -38,6 +38,14 @@ flutter_lints
 2.12
 file:///C:/Users/ASUS/Documents/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-1.0.4/
 file:///C:/Users/ASUS/Documents/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-1.0.4/lib/
+http
+2.4
+file:///C:/Users/ASUS/Documents/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.12.2/
+file:///C:/Users/ASUS/Documents/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.12.2/lib/
+http_parser
+2.3
+file:///C:/Users/ASUS/Documents/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-3.1.4/
+file:///C:/Users/ASUS/Documents/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-3.1.4/lib/
 lints
 2.12
 file:///C:/Users/ASUS/Documents/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/lints-1.0.1/
@@ -54,6 +62,10 @@ path
 2.12
 file:///C:/Users/ASUS/Documents/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.0/
 file:///C:/Users/ASUS/Documents/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.0/lib/
+pedantic
+2.12
+file:///C:/Users/ASUS/Documents/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/pedantic-1.11.1/
+file:///C:/Users/ASUS/Documents/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/pedantic-1.11.1/lib/
 source_span
 2.12
 file:///C:/Users/ASUS/Documents/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.8.1/
@@ -86,6 +98,10 @@ vector_math
 2.12
 file:///C:/Users/ASUS/Documents/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.0/
 file:///C:/Users/ASUS/Documents/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.0/lib/
+webview_flutter
+2.7
+file:///C:/Users/ASUS/Documents/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter-0.3.24/
+file:///C:/Users/ASUS/Documents/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter-0.3.24/lib/
 sky_engine
 2.12
 file:///C:/Users/ASUS/Documents/flutter_windows_2.5.3-stable/flutter/bin/cache/pkg/sky_engine/
