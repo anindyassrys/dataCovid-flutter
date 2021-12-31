@@ -91,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return "Username tidak boleh kosong";
+                            return "Username cannot be empty";
                           }
                           return null;
                         },
@@ -131,7 +131,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return "Password tidak boleh kosong";
+                              return "Password cannot be empty";
                             }
                             return null;
                           },

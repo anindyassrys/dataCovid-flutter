@@ -60,6 +60,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   String email = "";
   String password1 = "";
   String password2 = "";
+  String password = "";
 
   @override
   Widget build(BuildContext context) {
@@ -308,10 +309,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           onPressed: () async {
                             if (_registerFormKey.currentState!.validate()) {
                               final response = await request.post(
-                                  "http://10.0.2.2:8000/register",
+                                  "http://10.0.2.2:8000/auth-register",
                                   jsonEncode(<String, String>{
-                                    'first_name':first_name,
-                                    'last_name':last_name,
+                                    'first_name': first_name,
+                                    'last_name': last_name,
                                     'username': username,
                                     'email': email,
                                     'password1': password1,
@@ -320,9 +321,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                               if (response["status"] == true) {
                                 await request
-                                    .login("http://10.0.2.2:8000/login", {
+                                    .login("http://10.0.2.2:8000/auth-login", {
                                   'username': username,
-                                  'password': password1,
+                                  'password': password,
                                 });
                                 Navigator.of(context).pushNamedAndRemoveUntil(
                                     '/', (Route<dynamic> route) => false);

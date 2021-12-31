@@ -35,7 +35,8 @@ class ProfileState extends State<Profile> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return Center(
+    return Container(
+      color: const Color.fromRGBO(237, 234, 229, 1.0),
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Padding(
@@ -93,9 +94,8 @@ class ProfileState extends State<Profile> {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
                   elevation: 2.5,
-                  child:
-                      Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
-                  ]))),
+                  child: Column(
+                      mainAxisSize: MainAxisSize.min, children: <Widget>[]))),
           Container(
             padding: EdgeInsets.fromLTRB(150, 0, 150, 0),
             child: ElevatedButton(
@@ -105,13 +105,12 @@ class ProfileState extends State<Profile> {
                 });
               },
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Color.fromARGB(255, 176, 156, 143)),
+                backgroundColor: MaterialStateProperty.all(
+                    Color.fromARGB(255, 176, 156, 143)),
               ),
-              child: Container (
+              child: Container(
                 padding: EdgeInsets.fromLTRB(3, 3, 3, 3),
-                child: const Text (
-                  "Log Out"
-                ),
+                child: const Text("Log Out"),
               ),
             ),
           ),
@@ -121,30 +120,4 @@ class ProfileState extends State<Profile> {
   }
 }
 
-class ProfileStatistic extends StatelessWidget {
-  const ProfileStatistic({
-    Key? key,
-    required this.number,
-    required this.title,
-  }) : super(key: key);
 
-  final String number;
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(number, style: TextStyle(fontSize: 21, color: Colors.grey[500])),
-          Container(
-              child: Text(
-                title,
-                style:
-                    const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
-              ),
-              margin: const EdgeInsets.fromLTRB(0, 0, 0, 4.0)),
-        ]);
-  }
-}
