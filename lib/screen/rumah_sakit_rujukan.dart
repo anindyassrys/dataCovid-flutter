@@ -74,68 +74,71 @@ class _Rujukan extends State<RujukanPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        controller: _scrollController,
-        child: Column(
-          children: [
-            SizedBox(
-                height: 100,
-                width: MediaQuery.of(context).size.width * 0.8,
-                child: const Center(
-                    child: Text(
-                  'Rumah Sakit Rujukan',
-                  style: TextStyle(fontSize: 32),
-                ))),
-            FutureBuilder(
-                future: getRS(),
-                builder: (context, snapshot) {
-                  List<Widget> children;
-                  if (!snapshot.hasData) {
-                    children = const <Widget>[
-                      SizedBox(
-                        width: 60,
-                        height: 60,
-                        child: CircularProgressIndicator(),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 16),
-                        child: Text('Awaiting result...'),
-                      )
-                    ];
-                  } else {
-                    children = [
-                      DropdownButton(
-                          value: dropdownValue,
-                          icon: const Icon(Icons.arrow_downward),
-                          onChanged: (String? newValue) {
-                            setState(() {
-                              dropdownValue = newValue!;
-                            });
-                          },
-                          items: wilayahNames
-                              .map<DropdownMenuItem<String>>((String value) {
-                            return DropdownMenuItem<String>(
-                              value: value,
-                              child: Text(value),
-                            );
-                          }).toList()),
-                      LayoutBuilder(builder: (context, constraints) {
-                        if (constraints.maxWidth > 500) {
-                          return _buildList(
-                              3, wilayahMap, dropdownValue!, context);
-                        } else {
-                          return _buildList(
-                              1, wilayahMap, dropdownValue!, context);
-                        }
-                      })
-                    ];
-                  }
-                  return Column(
-                    children: children,
-                  );
-                }),
-          ],
-        ),
-      ),
+          controller: _scrollController,
+          child: Center(
+            child: Column(
+              children: [
+                SizedBox(
+                    height: 100,
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    child: const Center(
+                        child: Text(
+                      'Rumah Sakit Rujukan',
+                      style: TextStyle(fontSize: 32),
+                    ))),
+                FutureBuilder(
+                    future: getRS(),
+                    builder: (context, snapshot) {
+                      List<Widget> children;
+                      if (!snapshot.hasData) {
+                        children = <Widget>[
+                          SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.3),
+                          const SizedBox(
+                            width: 60,
+                            height: 60,
+                            child: CircularProgressIndicator(),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.only(top: 16),
+                            child: Text('Awaiting result...'),
+                          )
+                        ];
+                      } else {
+                        children = <Widget>[
+                          DropdownButton(
+                              value: dropdownValue,
+                              icon: const Icon(Icons.arrow_downward),
+                              onChanged: (String? newValue) {
+                                setState(() {
+                                  dropdownValue = newValue!;
+                                });
+                              },
+                              items: wilayahNames.map<DropdownMenuItem<String>>(
+                                  (String value) {
+                                return DropdownMenuItem<String>(
+                                  value: value,
+                                  child: Text(value),
+                                );
+                              }).toList()),
+                          LayoutBuilder(builder: (context, constraints) {
+                            if (constraints.maxWidth > 500) {
+                              return _buildList(
+                                  3, wilayahMap, dropdownValue!, context);
+                            } else {
+                              return _buildList(
+                                  1, wilayahMap, dropdownValue!, context);
+                            }
+                          })
+                        ];
+                      }
+                      return Column(
+                        children: children,
+                      );
+                    }),
+              ],
+            ),
+          )),
       floatingActionButton: _showBackToTopButton == false
           ? null
           : FloatingActionButton(
@@ -152,7 +155,7 @@ Widget _buildList(int column, Map map, String wilayah, BuildContext context) {
   Widget child;
 
   for (var rs in listRS!) {
-    children.add(templateCard(rs, context));
+    children.add(_templateCard(rs, context));
   }
 
   if (column == 1) {
@@ -167,12 +170,13 @@ Widget _buildList(int column, Map map, String wilayah, BuildContext context) {
     ));
   }
 
-  return Center(
+  return Padding(
+    padding: const EdgeInsets.fromLTRB(2, 16, 2, 16),
     child: child,
   );
 }
 
-Widget templateCard(RumahSakit data, BuildContext context) {
+Widget _templateCard(RumahSakit data, BuildContext context) {
   return Card(
       color: Colors.brown.shade50,
       margin: const EdgeInsets.all(8.0),
