@@ -1,40 +1,32 @@
-# Covid Information App
+# 📱 About DataCovid App
 
 [![pipeline status](https://gitlab.com/dixonfrederick/pbp-flutter/badges/main/pipeline.svg)](https://gitlab.com/dixonfrederick/pbp-flutter/-/commits/main)
 
-# PBP D Kelompok 9
-- Dixon Frederick - 2006597840
-- Anindya Sasriya Ibrahim - 2006597714
-- Paskalis Abhista Bagaskara Y - 2006597733
-- M Margaretha Stella Kalyanaduhita T - 2006597815
-- Muhammad Abdurahman Basyah - 2006597241
-- Muhammad Arkan Fauzan - 2006597380
-- Al Ghifari Enerza Sentanu - 2006596825
-
-## Link Download APK: 
+## Download Link  APK: 
 https://drive.google.com/file/d/1luM7ld1A4No4IuZ8SqOPSara6Bsllscj/view?usp=sharing
 
-## Cerita Modul dan Implementasi Web Service
-Kami akan membuat suatu aplikasi yang berisi informasi yang valid seputar Covid-19, dengan tujuan untuk mengedukasi para pengguna. Aplikasi ini akan berisi hal-hal yang perlu dilakukan atau dihindari di masa pandemi, data kasus Covid-19, informasi vaksinasi, dan hal-hal terkait lainnya.
-Modul yang akan diimplementasikan pada aplikasi ini akan merujuk pada modul-modul pada situs [Covid App](http://covid-information-app.herokuapp.com/) yang telah kami buat sebelumnya, yaitu sebagai berikut:
+## 📚 Story Module and Web Service Implementation
+We will create an application that contains valid information about Covid-19, with the aim of educating users. This application will contain things that need to be done or avoided during a pandemic, Covid-19 case data, vaccination information, and other related matters.
+The modules that will be implemented in this application will refer to the modules on the [Covid App](http://covid-information-app.herokuapp.com/) website that we created earlier, which are as follows:
 1. **Authorization & Authentication** <br>
-Modul ini akan memberikan akun kepada pengguna yang mendaftar pada situs [Covid App](http://covid-information-app.herokuapp.com/) dan data yang disimpan akan terhubung ke _database_ yang ada pada Django. Semua yang telah diintegrasikan di situs akan diimplementasikan ke dalam bentuk _mobile app_ seperti _profile page, login page,_ dan _registration page_.
-2. **Home & Info seputar Covid-19** <br>
-Halaman utama pada aplikasi, yang juga berisi informasi seputar Covid-19 yang dapat langsung dilihat oleh pengguna.
-3. **Data kasus Covid-19** <br>
-Berisi update data jumlah kasus Covid-19 (positif, sembuh, meninggal), baik secara nasional, maupun pada berbagai daerah di Indonesia.
-4. **Info terkait vaksin** <br>
-Sama seperti fungsinya pada situs [Covid App](http://covid-information-app.herokuapp.com/), modul ini akan menampilkan banyaknya jumlah orang yang sudah melaksanakan vaksinasi baik vaksinasi pertama maupun kedua berdasarkan kategorinya(data yang terlibat bukan merupakan data yang sebenarnya). Modul ini juga akan melakukan _request_ kedalam _database_ Django sehingga nantinya data yang ditampilkan dapat seragam dengan data yang berada pada situs [Covid App](http://covid-information-app.herokuapp.com/).
-5. **Indeks kewaspadaan tiap daerah** <br>
-Modul ini akan menampilkan indeks kewaspadaan dengan beberapa kategori, seperti yang telah diimplementasikan pada situs [Covid App](http://covid-information-app.herokuapp.com/), melalui iframe yang pada flutter, dapat ditampilkan dengan WebView atau [InAppWebView](https://newbedev.com/flutter-loading-an-iframe-from-webview). Data iframe yang akan ditampilkan tersebut diambil dengan metode GET pada _database_ views Django, yang akan mengembalikan sebuah JsonResponse berupa data nama dan source iframe. Untuk pengguna berupa admin, maka akan dapat menambahkan nama dan source untuk kategori indeks lainnya.
-6. **Rujukan rumah sakit** <br>
-Modul berfungsi sama seperti pada situs [Covid App](http://covid-information-app.herokuapp.com/), menampilkan daftar rumah sakit rujukan yang merupakan objek model pada database Django. Jika pengguna merupakan admin, bisa menambah rumah sakit rujukan.
+This module will provide an account to users who register on the [Covid App](http://covid-information-app.herokuapp.com/) site and the stored data will be connected to the existing _database_ in Django. Everything that has been integrated on the site will be implemented in the form of _mobile app_ such as _profile page, login page,_ and _registration page_.
+2. **Home & Info about Covid-19** <br>
+The main page of the application, which also contains information about Covid-19 that users can view immediately.
+3. **Covid-19 case data** <br>
+Contains updated data on the number of Covid-19 cases (positive, recovered, died), both nationally and in various regions in Indonesia.
+4. **Info regarding vaccines** <br>
+Just like its function on the [Covid App](http://covid-information-app.herokuapp.com/) website, this module will display the number of people who have carried out both the first and second vaccinations based on their category (the data involved is not a actual data). This module will also make _requests_ to the Django _database_ so that later the displayed data can be uniform with the data on the [Covid App] site (http://covid-information-app.herokuapp.com/).
+5. **Vigilance index for each region** <br>
+This module will display an alert index with several categories, as implemented on the [Covid App](http://covid-information-app.herokuapp.com/) website, via an iframe which in flutter, can be displayed with a WebView or [InAppWebView ](https://newbedev.com/flutter-loading-an-iframe-from-webview). The iframe data that will be displayed is retrieved by the GET method on Django's _database_ views, which will return a JsonResponse in the form of the iframe name and source data. For users who are admins, they will be able to add names and sources for other index categories.
+6. **Hospital referral** <br>
+The module works the same as on the [Covid App](http://covid-information-app.herokuapp.com/) website, showing a list of referral hospitals that are model objects in the Django database. If the user is an admin, can add a referral hospital.
 7. **Forum Discussion** <br>
-Modul ini adalah implementasi forum diskusi seputar Covid-19, yang dapat diisi oleh User (pengguna yang sudah login).
+This module is an implementation of a discussion forum around Covid-19, which can be filled in by Users (logged-in users).
 
-Manfaat yang ingin kami berikan untuk masyarakat dari aplikasi ini adalah memberikan informasi yang akurat terkait Covid-19, sehingga diharapkan dapat membantu dalam mengedukasi dan meningkatkan kewaspadaan masyarakat terhadap Covid-19 serta menekan peningkatan kasus Covid-19 di Indonesia.
+## 🔖 Benefits
+The benefit that we want to give to the public from this application is to provide accurate information regarding Covid-19, so that it is hoped that it can assist in educating and increasing public awareness of Covid-19 and suppressing the increase in Covid-19 cases in Indonesia.
 
-Persona
-- Guest Mode: dapat melihat informasi yang ada, tetapi tidak dapat bergabung ataupun mem-posting pada forum discussion.
-- User: dapat melihat seluruh informasi yang ada pada website, serta dapat bergabung dalam forum discussion dan dapat mem-posting dalam forum discussion, namun tidak dapat menghapus postingan pada forum discussion.
-- Administrator: dapat menghapus postingan yang sudah di-post pada forum discussion.
+## 👩 Persona
+- Guest Mode: can view existing information, but cannot join or post on discussion forums.
+- Users: can see all the information on the website, and can join forum discussions and can post in forum discussions, but cannot delete posts on forum discussions.
+- Administrator: can delete posts that have been posted on the forum discussion.
